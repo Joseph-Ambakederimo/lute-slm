@@ -29,7 +29,7 @@ scaler = torch.cuda.amp.GradScaler(enabled=config.use_amp)
 # -----------------------
 # RESUME FROM CHECKPOINT
 # -----------------------
-CHECKPOINT_DIR = "../checkpoints"
+CHECKPOINT_DIR = "./checkpoints"
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 checkpoint_path = os.path.join(CHECKPOINT_DIR, "checkpoint_latest.pt")
 start_step = 0
