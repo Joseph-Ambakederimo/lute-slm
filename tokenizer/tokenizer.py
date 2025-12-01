@@ -4,7 +4,7 @@ from tokenizers import ByteLevelBPETokenizer
 
 # Define paths relative to the project root
 LOCAL_DIR = "../data/local_texts"
-SAVE_PATH = "../tokenizer" 
+SAVE_PATH = "../tokenize" 
 os.makedirs(SAVE_PATH, exist_ok=True)
 
 def get_local_files(local_dir):

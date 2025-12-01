@@ -5,7 +5,7 @@ from model.config import ModelConfig
 from tokenizers import ByteLevelBPETokenizer
 
 class SLMPredictor:
-    def __init__(self, model_dir="./checkpoints", tokenizer_dir="./tokenizer"):
+    def __init__(self, model_dir="./checkpoints", tokenizer_dir="./tokenize"):
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         print(f"🚀 Initializing Inference on {self.device}...")
 

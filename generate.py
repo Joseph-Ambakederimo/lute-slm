@@ -18,7 +18,7 @@ model = VoxModel(config).to(device)
 model.eval()
 
 # Load checkpoint (assumes checkpoint_latest.pt exists after training)
-ckpt_path = "./checkpoints/checkpoint_latest.pt"
+ckpt_path = "../checkpoints/checkpoint_latest.pt"
 try:
     if ckpt_path:
         ckpt = torch.load(ckpt_path, map_location=device)
@@ -31,8 +31,8 @@ except FileNotFoundError:
 # LOAD TOKENIZER
 # -----------------------
 tokenizer = ByteLevelBPETokenizer(
-    "./tokenizer/vocab.json",
-    "./tokenizer/merges.txt"
+    "../tokenize/vocab.json",
+    "../tokenize/merges.txt"
 )
 
 # -----------------------

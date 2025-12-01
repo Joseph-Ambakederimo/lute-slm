@@ -6,7 +6,7 @@ from tokenizers import ByteLevelBPETokenizer
 from tqdm import tqdm
 
 # paths
-TOKENIZER_PATH = "../tokenizer"
+TOKENIZER_PATH = "../tokenize"
 LOCAL_DIR = "../data/local_texts"
 
 class TextDataset(Dataset):
