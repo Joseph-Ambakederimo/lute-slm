@@ -22,7 +22,7 @@ To run lute-slm, you will need Python 3.8+ and the libraries listed in requireme
 
 1. Clone the Repository
 
-git clone [https://github.com/your-username/lute-slm.git](https://github.com/Joseph-Ambakederimo/Lute-slm.git)
+git clone [https://github.com/your-username/lute-slm.git](https://github.com/Joseph-Ambakederimo/lute-slm.git)
 cd lute-slm
 
 
@@ -67,7 +67,7 @@ The main entry point for training is main.py. This script handles loading the to
 python main.py
 
 
-Training parameters (like batch size, learning rate, and model dimensions) can be adjusted in model/config.py. Checkpoints will be saved automatically to data/checkpoints/.
+Training parameters (like batch size, learning rate, and model dimensions) can be adjusted in model/config.py. Checkpoints will be saved automatically to data/checkpoints/. or checkpoints/.
 
 Phase 3: Generation and Inference
 
