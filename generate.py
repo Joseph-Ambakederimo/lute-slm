@@ -1,6 +1,6 @@
 import torch
 import torch.nn.functional as F
-from model.model import VoxModel
+from model.model import LuteModel
 from model.config import ModelConfig
 from tokenizers import ByteLevelBPETokenizer
 
@@ -14,15 +14,15 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # -----------------------
 # LOAD MODEL & CHECKPOINT
 # -----------------------
-model = VoxModel(config).to(device)
+model = LuteModel(config).to(device)
 model.eval()
 
 # Load checkpoint (assumes checkpoint_latest.pt exists after training)
-ckpt_path = "../checkpoints/checkpoint_latest.pt"
+ckpt_path = "checkpoints/checkpoint_latest.pt"
 try:
     if ckpt_path:
         ckpt = torch.load(ckpt_path, map_location=device)
-        model.load_state_dict(ckpt["model_state"])
+        model.load_state_dict(ckpt["model_state_dict"])
         print(f"♻️ loaded checkpoint from step {ckpt['step']}")
 except FileNotFoundError:
     print(f"⚠️ Checkpoint not found at {ckpt_path}. Starting with untraining weights.")
@@ -31,8 +31,8 @@ except FileNotFoundError:
 # LOAD TOKENIZER
 # -----------------------
 tokenizer = ByteLevelBPETokenizer(
-    "../tokenize/vocab.json",
-    "../tokenize/merges.txt"
+    "tokenize/vocab.json",
+    "tokenize/merges.txt"
 )
 
 # -----------------------
